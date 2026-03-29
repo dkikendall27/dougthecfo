@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doug Kikendall | Fractional CFO</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -13,9 +13,10 @@
   --ink-mid:  #162535;
   --brass:    #b8945a;
   --brass-lt: #d4b07a;
+  --blue:     #2d6a9f;
   --crimson:  #8b2020;
   --white:    #ffffff;
-  --muted:    rgba(255,255,255,0.52);
+  --muted:    rgba(255,255,255,0.62);
   --border:   rgba(184,148,90,0.2);
   --serif:    'Cormorant Garamond', Georgia, serif;
   --sans:     'Outfit', system-ui, sans-serif;
@@ -55,13 +56,25 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; a
 .hero-line { width: 32px; height: 1px; background: var(--brass); opacity: 0.6; flex-shrink: 0; }
 .hero h1 { font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.2rem); font-weight: 300; line-height: 1.08; letter-spacing: -0.01em; margin-bottom: 2rem; }
 .hero h1 em { font-style: italic; color: var(--brass-lt); }
-.hero-sub { font-size: 1rem; color: var(--muted); max-width: 480px; line-height: 1.8; font-weight: 300; margin-bottom: 0.75rem; }
-.hero-geo { font-size: 0.78rem; color: rgba(255,255,255,0.32); font-weight: 300; letter-spacing: 0.06em; margin-bottom: 3rem; font-style: italic; font-family: var(--serif); }
+.hero-sub { font-size: 1rem; color: var(--muted); max-width: 480px; line-height: 1.8; font-weight: 400; margin-bottom: 0.75rem; }
+.hero-geo { font-size: 0.82rem; color: rgba(255,255,255,0.38); font-weight: 400; letter-spacing: 0.06em; margin-bottom: 3rem; font-style: italic; font-family: var(--serif); }
 .hero-actions { display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
-.btn-primary { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--brass); color: var(--ink); padding: 0.9rem 2.2rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border-radius: 1px; transition: background 0.2s, transform 0.15s; white-space: nowrap; }
-.btn-primary:hover { background: var(--brass-lt); transform: translateY(-1px); }
-.btn-secondary { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; border-bottom: 0.5px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; font-weight: 400; }
-.btn-secondary:hover { color: var(--brass-lt); border-color: var(--brass); }
+.btn-raised { display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; width: 100%; box-shadow: 0 6px 16px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); cursor: pointer; text-decoration: none; transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease); }
+.btn-raised:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.55), 0 3px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); }
+.btn-raised:active { transform: translateY(0); box-shadow: 0 3px 8px rgba(0,0,0,0.4); }
+.btn-raised .btn-icon { padding: 1.1rem 1.4rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; line-height: 1; }
+.btn-raised .btn-label { flex: 1; padding: 1.1rem 1.25rem; font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; display: flex; align-items: center; justify-content: center; }
+.btn-gold { background: var(--brass); }
+.btn-gold .btn-icon { border-right: 1px solid rgba(0,0,0,0.15); color: var(--ink); }
+.btn-gold .btn-label { color: var(--ink); }
+.btn-blue { background: var(--blue); }
+.btn-blue .btn-icon { border-right: 1px solid rgba(0,0,0,0.2); color: var(--white); }
+.btn-blue .btn-label { color: var(--white); }
+.btn-or { display: flex; align-items: center; gap: 0.75rem; margin: 0.75rem 0; }
+.btn-or-line { flex: 1; height: 0.5px; background: rgba(184,148,90,0.2); }
+.btn-or-text { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+.btn-secondary-link { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.45); text-decoration: none; border-bottom: 0.5px solid rgba(255,255,255,0.2); padding-bottom: 2px; transition: color 0.2s, border-color 0.2s; font-weight: 400; }
+.btn-secondary-link:hover { color: var(--brass-lt); border-color: var(--brass); }
 .hero-scroll { position: absolute; bottom: 2.5rem; left: 3rem; display: flex; align-items: center; gap: 0.75rem; font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.3); z-index: 1; }
 .scroll-line { width: 40px; height: 0.5px; background: rgba(255,255,255,0.2); }
 .stats { background: var(--ink-mid); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 2.5rem 3rem; position: relative; z-index: 1; }
@@ -77,7 +90,7 @@ section { padding: 7rem 3rem; position: relative; z-index: 1; }
 .section-tag span { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
 h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
 h2 em { font-style: italic; color: var(--brass-lt); }
-.lead { font-size: 1rem; color: var(--muted); line-height: 1.85; font-weight: 300; max-width: 560px; margin-bottom: 1.25rem; }
+.lead { font-size: 1rem; color: var(--muted); line-height: 1.85; font-weight: 400; max-width: 560px; margin-bottom: 1.25rem; }
 .services { background: var(--ink-mid); }
 .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 3.5rem; border: 0.5px solid var(--border); }
 .scard { padding: 2.5rem 2rem; border-right: 0.5px solid var(--border); position: relative; transition: background 0.3s var(--ease); overflow: hidden; }
@@ -86,15 +99,15 @@ h2 em { font-style: italic; color: var(--brass-lt); }
 .scard:hover { background: rgba(184,148,90,0.04); }
 .scard:last-child { border-right: none; }
 .scard-num { font-family: var(--serif); font-size: 3.5rem; font-weight: 300; color: rgba(184,148,90,0.22); line-height: 1; margin-bottom: 1.5rem; }
-.scard h3 { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
-.scard p { font-size: 0.88rem; color: var(--muted); line-height: 1.8; font-weight: 300; }
+.scard h3 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--white); margin-bottom: 1rem; }
+.scard p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; font-weight: 400; }
 .who-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 6rem; align-items: start; }
 .moment-list { list-style: none; margin-top: 2rem; }
-.moment-list li { display: grid; grid-template-columns: 1.5rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.06); font-size: 0.9rem; color: rgba(255,255,255,0.62); font-weight: 300; line-height: 1.6; align-items: start; }
+.moment-list li { display: grid; grid-template-columns: 2rem 1fr; gap: 1rem; padding: 1.1rem 0; border-bottom: 0.5px solid rgba(255,255,255,0.06); font-size: 0.92rem; color: rgba(255,255,255,0.72); font-weight: 400; line-height: 1.6; align-items: start; }
 .moment-list li:last-child { border-bottom: none; }
-.mnum { font-family: var(--serif); font-size: 0.85rem; color: var(--brass); font-style: italic; padding-top: 2px; }
+.mnum { font-family: var(--serif); font-size: 0.85rem; color: var(--brass); font-style: normal; font-weight: 500; padding-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
 .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.5rem; }
-.tag { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1rem; border: 0.5px solid var(--border); color: rgba(255,255,255,0.38); border-radius: 1px; font-weight: 400; }
+.tag { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 1rem; border: 0.5px solid var(--border); color: rgba(255,255,255,0.45); border-radius: 1px; font-weight: 400; }
 .about { background: var(--ink-mid); }
 .about-grid { display: grid; grid-template-columns: 400px 1fr; gap: 5rem; align-items: start; }
 .about-photo-wrap { position: relative; }
@@ -104,39 +117,41 @@ h2 em { font-style: italic; color: var(--brass-lt); }
 .photo-border { position: absolute; top: 16px; left: 16px; right: -16px; bottom: -16px; border: 0.5px solid var(--border); z-index: -1; }
 .about-content .lead { max-width: 100%; }
 .about-personal { margin-top: 1.5rem; padding: 1.5rem; border-left: 2px solid var(--brass); background: rgba(184,148,90,0.04); }
-.about-personal p { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.75; font-weight: 300; }
+.about-personal p { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.75; font-weight: 400; }
 .cougs { font-family: var(--serif); font-style: italic; font-size: 2.2rem; font-weight: 300; letter-spacing: 0.02em; line-height: 1; margin-top: 1.75rem; }
 .creds { margin-top: 2.5rem; padding-top: 2.5rem; border-top: 0.5px solid var(--border); display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem 3rem; }
 .cred-label { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brass); font-weight: 500; margin-bottom: 0.5rem; display: block; }
 .cred-list { list-style: none; }
-.cred-list li { display: flex; align-items: baseline; gap: 0.6rem; font-size: 0.88rem; color: rgba(255,255,255,0.68); font-weight: 300; line-height: 1.5; padding: 0.2rem 0; }
+.cred-list li { display: flex; align-items: baseline; gap: 0.6rem; font-size: 0.9rem; color: rgba(255,255,255,0.72); font-weight: 400; line-height: 1.5; padding: 0.2rem 0; }
 .cred-list li::before { content: '—'; color: var(--brass); font-size: 0.7rem; flex-shrink: 0; opacity: 0.7; }
-.li-link { color: var(--brass); text-decoration: none; font-size: 0.84rem; border-bottom: 0.5px solid rgba(184,148,90,0.35); padding-bottom: 2px; transition: border-color 0.2s; display: inline-flex; align-items: center; gap: 0.4rem; }
+.li-link { color: var(--brass); text-decoration: none; font-size: 0.88rem; border-bottom: 0.5px solid rgba(184,148,90,0.35); padding-bottom: 2px; transition: border-color 0.2s; display: inline-flex; align-items: center; gap: 0.4rem; }
 .li-link:hover { border-color: var(--brass); }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
-.contact-intro p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; font-weight: 300; }
+.contact-intro p { font-size: 0.95rem; color: var(--muted); line-height: 1.75; font-weight: 400; }
 .contact-sig { margin-top: 2.5rem; padding-top: 2rem; border-top: 0.5px solid var(--border); }
-.contact-sig strong { display: block; color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-bottom: 0.2rem; font-weight: 500; }
-.contact-sig span { font-size: 0.82rem; color: var(--muted); font-weight: 300; }
+.contact-sig strong { display: block; color: rgba(255,255,255,0.8); font-size: 0.92rem; margin-bottom: 0.2rem; font-weight: 500; }
+.contact-sig span { font-size: 0.84rem; color: var(--muted); font-weight: 400; }
 .contact-form { background: var(--ink-mid); padding: 2.5rem; border-left: 2px solid var(--brass); }
-.form-intro { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.55); line-height: 1.65; margin-bottom: 1.75rem; }
+.form-intro { font-family: var(--serif); font-style: italic; font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.65; margin-bottom: 1.75rem; }
 .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 1.4rem; }
 .form-field label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; }
 .form-field label.gold { color: var(--brass); }
 .form-field label.grey { color: rgba(167,169,172,0.7); }
 .form-field input, .form-field textarea { background: transparent; border: none; outline: none; font-family: var(--serif); font-size: 1rem; color: var(--white); font-style: italic; padding: 8px 0; width: 100%; border-bottom: 1.5px solid rgba(184,148,90,0.25); transition: border-color 0.2s; resize: none; }
 .form-field input.gold-field { border-bottom-color: rgba(184,148,90,0.6); }
-.form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.2); font-style: italic; }
+.form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.22); font-style: italic; }
 .form-field input.gold-field::placeholder { color: rgba(184,148,90,0.35); }
 .form-field input:focus, .form-field textarea:focus { border-bottom-color: var(--brass); }
 .form-field textarea { min-height: 120px; line-height: 1.7; }
-.form-submit { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; background: rgba(184,148,90,0.3); color: rgba(14,26,36,0.4); padding: 0.9rem 2.2rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; border: none; border-radius: 1px; cursor: not-allowed; transition: background 0.2s, color 0.2s, transform 0.15s; font-family: var(--sans); margin-top: 0.5rem; width: 100%; }
-.form-submit.active { background: var(--brass); color: var(--ink); cursor: pointer; }
-.form-submit.active:hover { background: var(--brass-lt); transform: translateY(-1px); }
+.form-submit-btn { display: flex; align-items: stretch; border-radius: 8px; overflow: hidden; width: 100%; box-shadow: 0 6px 16px rgba(0,0,0,0.5), 0 2px 4px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); cursor: not-allowed; opacity: 0.4; transition: transform 0.15s, box-shadow 0.15s, opacity 0.2s; border: none; background: none; padding: 0; font-family: var(--sans); margin-top: 0.5rem; }
+.form-submit-btn.active { opacity: 1; cursor: pointer; }
+.form-submit-btn.active:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.55), 0 3px 6px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.2); }
+.form-submit-btn .btn-icon { background: var(--brass); padding: 1.1rem 1.4rem; border-right: 1px solid rgba(0,0,0,0.15); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; color: var(--ink); }
+.form-submit-btn .btn-label { background: var(--brass); flex: 1; padding: 1.1rem 1.25rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); display: flex; align-items: center; justify-content: center; }
 .form-success { display: none; text-align: center; padding: 2rem; }
 .form-success p { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--brass-lt); line-height: 1.6; }
-footer { border-top: 0.5px solid var(--border); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; color: rgba(255,255,255,0.22); letter-spacing: 0.06em; position: relative; z-index: 1; }
-footer a { color: rgba(255,255,255,0.22); text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 0.35rem; }
+footer { border-top: 0.5px solid var(--border); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; color: rgba(255,255,255,0.28); letter-spacing: 0.06em; position: relative; z-index: 1; }
+footer a { color: rgba(255,255,255,0.28); text-decoration: none; transition: color 0.2s; display: inline-flex; align-items: center; gap: 0.35rem; }
 footer a:hover { color: var(--brass); }
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.75s var(--ease), transform 0.75s var(--ease); }
 .reveal.visible { opacity: 1; transform: none; }
@@ -156,7 +171,7 @@ footer a:hover { color: var(--brass); }
   .hero-right .img-mob { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 10%; }
   .hero-right::after { background: linear-gradient(to bottom, rgba(14,26,36,0.15) 0%, transparent 30%); }
   .hero h1 { font-size: clamp(2.4rem, 8vw, 3.2rem); }
-  .hero-sub { font-size: 0.95rem; max-width: 100%; }
+  .hero-sub { font-size: 1rem; max-width: 100%; }
   .hero-scroll { display: none; }
   section { padding: 4rem 1.5rem; }
   .stats { padding: 2rem 1.5rem; }
@@ -176,6 +191,8 @@ footer a:hover { color: var(--brass); }
   .contact-form { padding: 1.75rem 1.5rem; }
   footer { flex-direction: column; gap: 1rem; text-align: center; padding: 1.5rem; }
   footer div { gap: 1.25rem; justify-content: center; }
+  .btn-raised .btn-label { font-size: 0.8rem; }
+  .btn-raised .btn-icon { font-size: 22px; }
 }
 </style>
 </head>
@@ -213,13 +230,15 @@ footer a:hover { color: var(--brass); }
       </div>
       <h1 class="reveal reveal-delay-1">The financial<br>leadership your<br>company <em>needs</em></h1>
       <p class="hero-sub reveal reveal-delay-2">Experienced CFO-level partnership for founder-led and growth-stage companies. No full-time overhead. No learning curve. Just the financial clarity and strategic execution your business deserves.</p>
-      <p class="hero-geo reveal reveal-delay-2">Based in Seattle &mdash; travel available.</p>
-      <div class="hero-actions reveal reveal-delay-3">
-        <a href="mailto:doug@dougthecfo.com?subject=Exploring%20CFO%20Partnership&body=Hi%20Doug%2C%0A%0AI%20found%20your%20site%20and%20wanted%20to%20reach%20out.%20Here%20is%20a%20bit%20about%20my%20company%20and%20what%20I%20am%20working%20through%20%3A%20including%20our%20stage%2C%20what%20we%20need%20help%20with%2C%20and%20the%20best%20way%20and%20time%20to%20reach%20me." class="btn-primary">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Start a conversation
+      <p class="hero-geo reveal reveal-delay-2">Based in Seattle - travel available.</p>
+      <div class="reveal reveal-delay-3" style="display:flex;flex-direction:column;gap:0;max-width:360px;">
+        <a href="mailto:doug@dougthecfo.com?subject=Exploring%20CFO%20Partnership&body=Hi%20Doug%2C%0A%0AI%20found%20your%20site%20and%20wanted%20to%20reach%20out.%20Here%20is%20a%20bit%20about%20my%20company%20and%20what%20I%20am%20working%20through%3A%20including%20our%20stage%2C%20what%20we%20need%20help%20with%2C%20and%20the%20best%20way%20and%20time%20to%20reach%20me." class="btn-raised btn-gold">
+          <div class="btn-icon">&#9993;</div>
+          <div class="btn-label">Start a conversation</div>
         </a>
-        <a href="#services" class="btn-secondary">See what I do</a>
+        <div style="margin-top:1.5rem;">
+          <a href="#services" class="btn-secondary-link">See what I do</a>
+        </div>
       </div>
     </div>
     <div class="hero-right">
@@ -294,11 +313,11 @@ footer a:hover { color: var(--brass); }
       <div>
         <p style="font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--brass);font-weight:500;margin-bottom:0.75rem;" class="reveal">My work is most valuable when</p>
         <ul class="moment-list">
-          <li class="reveal"><span class="mnum">i.</span><span>Preparing for a capital raise or navigating investor conversations</span></li>
-          <li class="reveal reveal-delay-1"><span class="mnum">ii.</span><span>Building finance infrastructure from the ground up</span></li>
-          <li class="reveal reveal-delay-2"><span class="mnum">iii.</span><span>Improving operational reporting and business visibility</span></li>
-          <li class="reveal reveal-delay-3"><span class="mnum">iv.</span><span>Evaluating acquisitions or navigating M&amp;A diligence</span></li>
-          <li class="reveal reveal-delay-4"><span class="mnum">v.</span><span>Entering a period of rapid growth or increasing complexity</span></li>
+          <li class="reveal"><span class="mnum">I.</span><span>Preparing for a capital raise or navigating investor conversations</span></li>
+          <li class="reveal reveal-delay-1"><span class="mnum">II.</span><span>Building finance infrastructure from the ground up</span></li>
+          <li class="reveal reveal-delay-2"><span class="mnum">III.</span><span>Improving operational reporting and business visibility</span></li>
+          <li class="reveal reveal-delay-3"><span class="mnum">IV.</span><span>Evaluating acquisitions or navigating M&amp;A diligence</span></li>
+          <li class="reveal reveal-delay-4"><span class="mnum">V.</span><span>Entering a period of rapid growth or increasing complexity</span></li>
         </ul>
       </div>
     </div>
@@ -330,6 +349,7 @@ footer a:hover { color: var(--brass); }
             <span class="cred-label">Education</span>
             <ul class="cred-list">
               <li>Master of Accountancy, Washington State University</li>
+              <li>B.S. Accounting &amp; Finance, Washington State University</li>
             </ul>
           </div>
           <div class="cred-item">
@@ -371,7 +391,7 @@ footer a:hover { color: var(--brass); }
         <p class="lead reveal reveal-delay-2">If your company could benefit from stronger financial leadership, improved operational visibility, or support navigating growth, capital strategy, or scaling challenges, I would be glad to connect.</p>
         <div class="contact-sig reveal reveal-delay-3">
           <strong>Douglas Kikendall, CPA, CFE</strong>
-          <span><a href="mailto:doug@dougthecfo.com?subject=Exploring%20CFO%20Partnership&body=Hi%20Doug%2C%0A%0AI%20found%20your%20site%20and%20wanted%20to%20reach%20out.%20Here%20is%20a%20bit%20about%20my%20company%20and%20what%20I%20am%20working%20through%20%3A%20including%20our%20stage%2C%20what%20we%20need%20help%20with%2C%20and%20the%20best%20way%20and%20time%20to%20reach%20me." style="color:var(--muted);text-decoration:none;border-bottom:0.5px solid rgba(255,255,255,0.2);padding-bottom:1px;">doug@dougthecfo.com</a> &nbsp;&middot;&nbsp; Seattle, Washington</span>
+          <span><a href="mailto:doug@dougthecfo.com?subject=Exploring%20CFO%20Partnership&body=Hi%20Doug%2C%0A%0AI%20found%20your%20site%20and%20wanted%20to%20reach%20out.%20Here%20is%20a%20bit%20about%20my%20company%20and%20what%20I%20am%20working%20through%3A%20including%20our%20stage%2C%20what%20we%20need%20help%20with%2C%20and%20the%20best%20way%20and%20time%20to%20reach%20me." style="color:var(--muted);text-decoration:none;border-bottom:0.5px solid rgba(255,255,255,0.2);padding-bottom:1px;">doug@dougthecfo.com</a> &nbsp;&middot;&nbsp; Seattle, Washington</span>
         </div>
       </div>
       <div class="contact-form reveal">
@@ -386,11 +406,18 @@ footer a:hover { color: var(--brass); }
               <label class="grey" for="message">How can I help? *</label>
               <textarea id="message" name="message" placeholder="Tell me a bit about your company and what you're working through, including your stage, what you need help with, and the best way and time to reach you."></textarea>
             </div>
-            <button type="submit" class="form-submit" id="submitBtn" disabled>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              Start the conversation
+            <button type="submit" class="form-submit-btn" id="submitBtn" disabled>
+              <div class="btn-icon">&#9993;</div>
+              <div class="btn-label">Start the conversation</div>
             </button>
           </form>
+          <div class="btn-or" style="margin-top:0.75rem;"><div class="btn-or-line"></div><span class="btn-or-text">or</span><div class="btn-or-line"></div></div>
+          <a href="https://calendly.com/doug-dougthecfo/30min" target="_blank" rel="noopener" class="btn-raised btn-blue">
+            <div class="btn-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <div class="btn-label">Grab 30 minutes with Doug</div>
+          </a>
         </div>
         <div class="form-success" id="formSuccess">
           <p>Thank you for reaching out.<br>I will be in touch shortly.</p>
@@ -407,7 +434,7 @@ footer a:hover { color: var(--brass); }
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       LinkedIn
     </a>
-    <a href="mailto:doug@dougthecfo.com?subject=Exploring%20CFO%20Partnership&body=Hi%20Doug%2C%0A%0AI%20found%20your%20site%20and%20wanted%20to%20reach%20out.%20Here%20is%20a%20bit%20about%20my%20company%20and%20what%20I%20am%20working%20through%20%3A%20including%20our%20stage%2C%20what%20we%20need%20help%20with%2C%20and%20the%20best%20way%20and%20time%20to%20reach%20me.">
+    <a href="mailto:doug@dougthecfo.com?subject=Exploring%20CFO%20Partnership&body=Hi%20Doug%2C%0A%0AI%20found%20your%20site%20and%20wanted%20to%20reach%20out.%20Here%20is%20a%20bit%20about%20my%20company%20and%20what%20I%20am%20working%20through%3A%20including%20our%20stage%2C%20what%20we%20need%20help%20with%2C%20and%20the%20best%20way%20and%20time%20to%20reach%20me.">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       doug@dougthecfo.com
     </a>
@@ -445,7 +472,8 @@ emailField.addEventListener('input', validateForm);
 messageField.addEventListener('input', validateForm);
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  submitBtn.textContent = 'Sending...';
+  const label = submitBtn.querySelector('.btn-label');
+  label.textContent = 'Sending...';
   submitBtn.disabled = true;
   try {
     const res = await fetch('https://formspree.io/f/mgopawkq', {
@@ -457,12 +485,12 @@ document.getElementById('contactForm').addEventListener('submit', async function
       document.getElementById('formWrap').style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
     } else {
-      submitBtn.textContent = 'Something went wrong — try emailing directly';
+      label.textContent = 'Something went wrong - try emailing directly';
       submitBtn.disabled = false;
       submitBtn.classList.add('active');
     }
   } catch(err) {
-    submitBtn.textContent = 'Something went wrong — try emailing directly';
+    label.textContent = 'Something went wrong - try emailing directly';
     submitBtn.disabled = false;
     submitBtn.classList.add('active');
   }
